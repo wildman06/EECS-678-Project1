@@ -8,6 +8,7 @@
  */
 //fuck the world
 
+
 #include "execute.h"
 
 #include <stdio.h>
@@ -18,8 +19,6 @@
 /**
  * @brief Note calls to any function that requires implementation
  */
-#define IMPLEMENT_ME()                                                  \
-  fprintf(stderr, "IMPLEMENT ME: %s(line %d): %s()\n", __FILE__, __LINE__, __FUNCTION__)
 
 /***************************************************************************
  * Interface Functions
@@ -27,14 +26,11 @@
 
 // Return a string containing the current working directory.
 char* get_current_directory(bool* should_free) {
-  // TODO: Get the current working directory. This will fix the prompt path.
-  // HINT: This should be pretty simple
-  IMPLEMENT_ME();
+ 
+  //test comment
+  *should_free = true;
 
-  // Change this to true if necessary
-  *should_free = false;
-
-  return "get_current_directory()";
+  return ;
 }
 
 // Returns the value of an environment variable env_var
