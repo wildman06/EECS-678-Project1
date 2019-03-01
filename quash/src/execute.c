@@ -27,13 +27,12 @@
 // Return a string containing the current working directory.
 char* get_current_directory(bool* should_free) {
   // TODO: Get the current working directory. This will fix the prompt path.
-  // HINT: This should be pretty simple
-  IMPLEMENT_ME();
+  curDirectory = get_current_dir_name(3);
 
-  // Change this to true if necessary
-  *should_free = false;
+  //Change this to true if necessary
+  *should_free = true;
 
-  return "get_current_directory()";
+  return curDirectory;
 }
 
 // Returns the value of an environment variable env_var
@@ -41,13 +40,8 @@ const char* lookup_env(const char* env_var) {
   // TODO: Lookup environment variables. This is required for parser to be able
   // to interpret variables from the command line and display the prompt
   // correctly
-  // HINT: This should be pretty simple
-  IMPLEMENT_ME();
 
-  // TODO: Remove warning silencers
-  (void) env_var; // Silence unused variable warning
-
-  return "???";
+  return getenv(env_var);
 }
 
 // Check the status of background jobs
@@ -55,10 +49,20 @@ void check_jobs_bg_status() {
   // TODO: Check on the statuses of all processes belonging to all background
   // jobs. This function should remove jobs from the jobs queue once all
   // processes belonging to a job have completed.
-  IMPLEMENT_ME();
 
+  if (is_empty_background_job_queue_t(&background_queue))
+  {
+  return;
+  }
   // TODO: Once jobs are implemented, uncomment and fill the following line
   // print_job_bg_complete(job_id, pid, cmd);
+
+  int jobQueueLength = length_background_job_queue_t(&background_queue);
+
+  for(int i = 0; i < jobQueueLength; i++)
+  {
+    
+  }
 }
 
 // Prints the job id number, the process id of the first process belonging to
