@@ -7,6 +7,8 @@
  * @note As you add things to this file you may want to change the method signature
  */
 
+
+
 #include "execute.h"
 
 #include <stdio.h>
@@ -17,8 +19,6 @@
 /**
  * @brief Note calls to any function that requires implementation
  */
-#define IMPLEMENT_ME()                                                  \
-  fprintf(stderr, "IMPLEMENT ME: %s(line %d): %s()\n", __FILE__, __LINE__, __FUNCTION__)
 
 /***************************************************************************
  * Interface Functions
@@ -61,7 +61,7 @@ void check_jobs_bg_status() {
 
   for(int i = 0; i < jobQueueLength; i++)
   {
-    
+
   }
 }
 
